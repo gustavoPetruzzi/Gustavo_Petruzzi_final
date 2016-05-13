@@ -1,0 +1,43 @@
+typedef struct{
+    char titulo[50];
+    int anio;
+    char nacionalidad[50];
+    int idDirector[10];
+    int idPelicula;
+    int isEmpty;
+}ePelicula;
+typedef struct{
+    char nombre[50];
+    char fechaNacimiento[12];
+    char paisOrigen[50];
+    int idDirector;
+    int isEmpty;
+}eDirector;
+
+int initArrayPeliculas(ePelicula* pPelicula, int lengthPelicula , int initPeliculas);
+int initArrayDirectores(eDirector* pDirector, int length);
+char mostrarMenu( char textomenu[], char min, char max );
+int obtenerEspacioLibre(ePelicula* pPelicula,int length);
+int buscarPorIdPelicula(ePelicula* pPelicula, int length, int idPelicula);
+int cantidadDirectoresCargados(eDirector* pDirector, int lengthDirectores);
+int pedirDatosPelicula(ePelicula* pPelicula, int lengthPelicula,eDirector* pDirector, int lengthDirector, char* titulo,int* anio, char* Nacionalidad,int idDirector[], int* cantidadDirectores, int* idPelicula, int pedirId);
+ePelicula cargarPelicula(char auxTitulo[],int auxAnio, char auxNacionalidad[],int auxIdDirector[], int auxIdPelicula, int auxCantidadDirectores);
+void agregarPelicula(ePelicula* pPelicula, int lengthPelicula,eDirector* pDirector, int lengthDirector);
+int isEmptyDirector(eDirector* pDirector, int length);
+int isEmptyPelicula(ePelicula* pPelicula, int length);
+void modificar(ePelicula* pPelicula, int lengthPelicula,eDirector* pDirector, int lengthDirector);
+void borrar(ePelicula* pPelicula, int length);
+int buscarPorNombreDirector(eDirector* pDirector, int length, char nombre[]);
+int buscarPorIdDirector(eDirector* pDirector, int length, int idDirector);
+void pedirDatosDirector(eDirector* pDirector, int lenght,char* nombre,char* fechaNacimiento,char* paisOrigen,int* idDirector);
+eDirector cargarDirector(char auxNombre[],char auxFechaNacimiento[],char auxPaisOrigen[],int auxIdDirector);
+int obtenerEspacioLibreDirector(eDirector* pDirector,int length);
+void nuevoDirector(eDirector* pDirector, int length);
+void borrarDirector(eDirector* pDirector, int length);
+int cantidadPeliculasDirector(ePelicula* pPelicula, int length, int auxIdDirector);
+int directorMasPeliculas(eDirector* pDirector, int lengthDirectores, ePelicula* pPelicula, int lengthPelicula);
+int cantidadDirectoresPorPelicula(ePelicula* pPelicula , int lengthPelicula, int indicePelicula);
+void informar(eDirector* pDirector, int lengthDirector, ePelicula* pPelicula, int lengthPelicula);
+void ordenar(ePelicula* pPelicula, int length);
+void mostrarDirectores(ePelicula* pPelicula, int lengthPelicula, eDirector* pDirector, int lengthDirectores, int indicePelicula);
+void mostrarPeliculas(ePelicula* pPelicula, int length, eDirector* pDirector, int lengthDirectores);
