@@ -145,6 +145,13 @@ int buscarPorIdPelicula(ePelicula* pPelicula, int length, int idPelicula)
     }
     return index;
 }
+/** \brief cuenta la cantidad de directores cargados que existen en
+ *
+ * \param eDirector* pDirector array de estructuras en el cual cuenta la cantidad de directores
+ * \param int lengthDirectores tamaño total de array de estructuras
+ * \return devuelve la cantidad de directores cargados, si no hay directores, devuelve [0]
+ *
+ */
 
 int cantidadDirectoresCargados(eDirector* pDirector, int lengthDirectores)
 {
@@ -170,7 +177,8 @@ int cantidadDirectoresCargados(eDirector* pDirector, int lengthDirectores)
  * \param char* titulo dato pedido al usuario
  * \param int* anio dato pedido al usuario
  * \param char* Nacionalidad dato pedido al usuario
- * \param int* idDirector dato pedido al usuario
+ * \param int idDirector[] dato pedido al usuario
+ * \param int* cantidadDirectores dato pedido al usuario
  * \param int* idPelicula dato pedido al usuario
  * \param int pedirId si el parametro pasado es 1, se le solicita el id al usuario, si es cualquier otro numero, no se le pide
  * \return
@@ -895,7 +903,7 @@ int directorMasPeliculas(eDirector* pDirector, int lengthDirectores, ePelicula* 
 /** \brief cuenta la cantidad de peliculas
  *
  * \param pPelicula array a estructuras
- * \param int length tamaño del array de estructuras
+ * \param int length tamaño maximo del array de estructuras
  * \param int indicePelicula indice a buscar
 
  * \return la cantidad de directores que tiene la pelicula
@@ -922,6 +930,13 @@ int cantidadDirectoresPorPelicula(ePelicula* pPelicula , int lengthPelicula, int
     return cantidadDirectores;
 
 }
+/** \brief en un array de estructuras, busca a la pelicula con mas directores
+ *
+ * \param ePelicula* pPelicula array de estructuras donde opera
+ * \param int lengthPelicula tamaño maximo del array de estructuras
+ * \return devuelve el id de la pelicula con mas directores
+ *
+ */
 
 int peliculaMasDirectores(ePelicula* pPelicula, int lengthPelicula)
 {
@@ -1027,7 +1042,18 @@ void ordenar(ePelicula* pPelicula, int length)
     }
 }
 
-void mostrarDirectores(ePelicula* pPelicula, int lengthPelicula, eDirector* pDirector, int lengthDirectores, int indicePelicula)
+/** \brief muestra por pantalla los miembros de la estructura
+ *
+ * \param ePelicula* pPelicula array de estructuras
+ * \param int lengthPelicula tamaño del array de estructuras pasado como primer paramentro
+ * \param eDirector* pDirector array de estructuras
+ * \param int lengthDirector tamaño del array de estructuras como tercer parametro
+ * \param int indicePelicula parametro donde busca los directores
+ * \return
+ *
+ */
+
+void mostrarDirectoresPorPelicula(ePelicula* pPelicula, int lengthPelicula, eDirector* pDirector, int lengthDirectores, int indicePelicula)
 {
     int i;
     int indice;
@@ -1065,7 +1091,7 @@ void mostrarPeliculas(ePelicula* pPelicula, int length, eDirector* pDirector, in
             if(pPelicula[i].isEmpty == 0)
             {
                 printf("Pelicula : \n\t%s\nAnio:\n\t%d\n", pPelicula[i].titulo,pPelicula[i].anio);
-                mostrarDirectores(pPelicula, length, pDirector, lengthDirectores, i);
+                mostrarDirectoresPorPelicula(pPelicula, length, pDirector, lengthDirectores, i);
                 printf("\n____________________________________\n");
             }
 

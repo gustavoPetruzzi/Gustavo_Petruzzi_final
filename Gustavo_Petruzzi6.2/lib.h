@@ -39,5 +39,5 @@ int directorMasPeliculas(eDirector* pDirector, int lengthDirectores, ePelicula* 
 int cantidadDirectoresPorPelicula(ePelicula* pPelicula , int lengthPelicula, int indicePelicula);
 void informar(eDirector* pDirector, int lengthDirector, ePelicula* pPelicula, int lengthPelicula);
 void ordenar(ePelicula* pPelicula, int length);
-void mostrarDirectores(ePelicula* pPelicula, int lengthPelicula, eDirector* pDirector, int lengthDirectores, int indicePelicula);
+void mostrarDirectoresPorPelicula(ePelicula* pPelicula, int lengthPelicula, eDirector* pDirector, int lengthDirectores, int indicePelicula);
 void mostrarPeliculas(ePelicula* pPelicula, int length, eDirector* pDirector, int lengthDirectores);

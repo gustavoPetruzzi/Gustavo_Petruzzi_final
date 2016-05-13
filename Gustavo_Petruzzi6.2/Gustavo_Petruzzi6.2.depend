@@ -8,7 +8,7 @@
 
 1462888000 e:\gustavo_petruzzi6.2\input.h
 
-1463119914 source:e:\gustavo_petruzzi6.2\lib.c
+1463120006 source:e:\gustavo_petruzzi6.2\lib.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -18,7 +18,7 @@
 
 1463119886 e:\gustavo_petruzzi6.2\lib.h
 
-1463119488 source:e:\gustavo_petruzzi6.2\main.c
+1463163744 source:e:\gustavo_petruzzi6.2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lib.h"
